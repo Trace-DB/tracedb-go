@@ -1,5 +1,18 @@
 # TraceDB Go SDK
 
+## Split Checkpoint
+
+Status: **future-only** after the Trace-DB organization split.
+
+Checkpoint plan:
+
+1. Keep this repository as a documented placeholder until Go SDK work is
+   explicitly prioritized.
+2. Do not add package metadata, release automation, or SDK claims before the
+   first implementation PR.
+3. Start implementation only after pinning a `tracedb-protocol.lock` and
+   defining the initial smoke path.
+
 This repository is reserved for the future official Go SDK.
 
 No Go SDK implementation, module path, package artifact, or verification smoke is
