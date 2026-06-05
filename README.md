@@ -1,5 +1,9 @@
 # TraceDB Go SDK
 
+[![Status: planned](https://img.shields.io/badge/status-planned-lightgrey)](#split-checkpoint)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+[![Docs](https://img.shields.io/badge/docs-Go%20SDK-informational)](https://docs.trace-db.com/go-sdk)
+
 ## Split Checkpoint
 
 Status: **future-only** after the Trace-DB organization split.
@@ -19,6 +23,10 @@ No Go SDK implementation, module path, package artifact, or verification smoke i
 present yet. When implementation starts, it should follow the same contract
 boundaries as the Rust, TypeScript, and Python SDKs and should not claim release
 readiness until the smoke path below exists.
+
+This repository is public as a language-SDK placeholder only. It does not
+contain hosted TraceDB SaaS internals, operator tooling, or deployment
+automation.
 
 ## Planned Scope
 
