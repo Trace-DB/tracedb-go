@@ -28,6 +28,14 @@ This repository is public as a language-SDK placeholder only. It does not
 contain hosted TraceDB SaaS internals, operator tooling, or deployment
 automation.
 
+## Registry Status
+
+No Go SDK implementation, Go module path, or package artifact is published for
+TraceDB yet. The public Go module proxy has no versioned `tracedb-go` releases
+for this organization lane. Any Go package or module claim should remain
+planned-only until the first implementation PR defines the module path,
+protocol lock, and smoke path.
+
 ## Planned Scope
 
 - `Client` constructed from explicit config or `FromEnv()`.
