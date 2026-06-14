@@ -58,6 +58,9 @@ func dereferenceArg(arg interface{}) interface{} {
 // MergeHeaders merges the given headers together, where the right
 // takes precedence over the left.
 func MergeHeaders(left, right http.Header) http.Header {
+	if left == nil {
+		left = make(http.Header, len(right))
+	}
 	for key, values := range right {
 		if len(values) > 1 {
 			left[key] = values

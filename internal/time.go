@@ -53,7 +53,7 @@ func (d *Date) TimePtr() *time.Time {
 
 func (d *Date) MarshalJSON() ([]byte, error) {
 	if d == nil || d.t == nil {
-		return nil, nil
+		return []byte("null"), nil
 	}
 	return json.Marshal(d.t.Format(dateFormat))
 }
@@ -117,7 +117,7 @@ func (d *DateTime) TimePtr() *time.Time {
 
 func (d *DateTime) MarshalJSON() ([]byte, error) {
 	if d == nil || d.t == nil {
-		return nil, nil
+		return []byte("null"), nil
 	}
 	return json.Marshal(d.t.Format(time.RFC3339))
 }

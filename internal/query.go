@@ -230,6 +230,10 @@ func reflectMap(values url.Values, val reflect.Value, scope string) error {
 		for v.Kind() == reflect.Interface {
 			v = v.Elem()
 		}
+		if !v.IsValid() {
+			// nil interface value: skip
+			continue
+		}
 
 		if v.Kind() == reflect.Map {
 			if err := reflectMap(values, v, paramName); err != nil {

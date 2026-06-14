@@ -276,10 +276,10 @@ func decodeError(response *http.Response, errorDecoder ErrorDecoder) error {
 	// types, so we just read the body as-is, and
 	// put it into a normal error.
 	bytes, err := io.ReadAll(response.Body)
-	if err != nil && err != io.EOF {
+	if err != nil {
 		return err
 	}
-	if err == io.EOF {
+	if len(bytes) == 0 {
 		// The error didn't have a response body,
 		// so all we can do is return an error
 		// with the status code.

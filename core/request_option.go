@@ -63,6 +63,9 @@ func (r *RequestOptions) ToHeader() http.Header {
 
 func (r *RequestOptions) cloneHeader() http.Header {
 	headers := r.HTTPHeader.Clone()
+	if headers == nil {
+		headers = make(http.Header)
+	}
 	headers.Set("X-Fern-Language", "Go")
 	headers.Set("X-Fern-SDK-Name", "github.com/Trace-DB/tracedb-go")
 	headers.Set("X-Fern-SDK-Version", "v0.0.0")

@@ -5,8 +5,9 @@ package tracedb
 import (
 	json "encoding/json"
 	fmt "fmt"
-	internal "github.com/Trace-DB/tracedb-go/internal"
 	big "math/big"
+
+	internal "github.com/Trace-DB/tracedb-go/internal"
 )
 
 // Public-safe metrics response.
@@ -252,7 +253,23 @@ func (m *MetricsResponse) MarshalJSON() ([]byte, error) {
 		embed: embed(*m),
 	}
 	explicitMarshaler := internal.HandleExplicitFields(marshaler, m.explicitFields)
-	return json.Marshal(explicitMarshaler)
+	marshaled, err := json.Marshal(explicitMarshaler)
+	if err != nil {
+		return nil, err
+	}
+	if len(m.extraProperties) == 0 {
+		return marshaled, nil
+	}
+	var payload map[string]interface{}
+	if err := json.Unmarshal(marshaled, &payload); err != nil {
+		return nil, err
+	}
+	for k, v := range m.extraProperties {
+		if _, exists := payload[k]; !exists {
+			payload[k] = v
+		}
+	}
+	return json.Marshal(payload)
 }
 
 func (m *MetricsResponse) String() string {

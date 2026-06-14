@@ -5,8 +5,9 @@ package tracedb
 import (
 	json "encoding/json"
 	fmt "fmt"
-	internal "github.com/Trace-DB/tracedb-go/internal"
 	big "math/big"
+
+	internal "github.com/Trace-DB/tracedb-go/internal"
 )
 
 var (
@@ -82,6 +83,9 @@ func (p *PostAdminCompactRequest) UnmarshalJSON(data []byte) error {
 }
 
 func (p *PostAdminCompactRequest) MarshalJSON() ([]byte, error) {
+	if p.Body == nil {
+		return json.Marshal(EmptyObject{})
+	}
 	return json.Marshal(p.Body)
 }
 

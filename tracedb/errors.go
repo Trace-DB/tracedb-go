@@ -4,6 +4,7 @@ package tracedb
 
 import (
 	json "encoding/json"
+
 	core "github.com/Trace-DB/tracedb-go/core"
 )
 
@@ -14,6 +15,9 @@ type BadGatewayError struct {
 }
 
 func (b *BadGatewayError) UnmarshalJSON(data []byte) error {
+	if b.APIError == nil {
+		b.APIError = &core.APIError{}
+	}
 	var body *ErrorResponse
 	if err := json.Unmarshal(data, &body); err != nil {
 		return err
@@ -38,6 +42,9 @@ type BadRequestError struct {
 }
 
 func (b *BadRequestError) UnmarshalJSON(data []byte) error {
+	if b.APIError == nil {
+		b.APIError = &core.APIError{}
+	}
 	var body *ErrorResponse
 	if err := json.Unmarshal(data, &body); err != nil {
 		return err
@@ -62,6 +69,9 @@ type ConflictError struct {
 }
 
 func (c *ConflictError) UnmarshalJSON(data []byte) error {
+	if c.APIError == nil {
+		c.APIError = &core.APIError{}
+	}
 	var body *ErrorResponse
 	if err := json.Unmarshal(data, &body); err != nil {
 		return err
@@ -86,6 +96,9 @@ type InternalServerError struct {
 }
 
 func (i *InternalServerError) UnmarshalJSON(data []byte) error {
+	if i.APIError == nil {
+		i.APIError = &core.APIError{}
+	}
 	var body *ErrorResponse
 	if err := json.Unmarshal(data, &body); err != nil {
 		return err
@@ -110,6 +123,9 @@ type NotFoundError struct {
 }
 
 func (n *NotFoundError) UnmarshalJSON(data []byte) error {
+	if n.APIError == nil {
+		n.APIError = &core.APIError{}
+	}
 	var body *ErrorResponse
 	if err := json.Unmarshal(data, &body); err != nil {
 		return err
@@ -134,6 +150,9 @@ type ServiceUnavailableError struct {
 }
 
 func (s *ServiceUnavailableError) UnmarshalJSON(data []byte) error {
+	if s.APIError == nil {
+		s.APIError = &core.APIError{}
+	}
 	var body *ErrorResponse
 	if err := json.Unmarshal(data, &body); err != nil {
 		return err
@@ -158,6 +177,9 @@ type TooManyRequestsError struct {
 }
 
 func (t *TooManyRequestsError) UnmarshalJSON(data []byte) error {
+	if t.APIError == nil {
+		t.APIError = &core.APIError{}
+	}
 	var body *ErrorResponse
 	if err := json.Unmarshal(data, &body); err != nil {
 		return err
@@ -182,6 +204,9 @@ type UnauthorizedError struct {
 }
 
 func (u *UnauthorizedError) UnmarshalJSON(data []byte) error {
+	if u.APIError == nil {
+		u.APIError = &core.APIError{}
+	}
 	var body *ErrorResponse
 	if err := json.Unmarshal(data, &body); err != nil {
 		return err
