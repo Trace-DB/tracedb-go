@@ -1,0 +1,727 @@
+{
+  "mappings": [
+    {
+      "id": "31befac3-6afe-4226-9178-39ba1c3fa545",
+      "name": "Compact local engine state - default",
+      "request": {
+        "urlPathTemplate": "/v1/admin/compact",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"compacted\": true\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "31befac3-6afe-4226-9178-39ba1c3fa545",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "815edd40-c105-4d31-a67a-c5f6e1a3b3ae",
+      "name": "List admin jobs - default",
+      "request": {
+        "urlPathTemplate": "/v1/admin/jobs",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"jobs\": [\n    {\n      \"queue\": \"queue\",\n      \"state\": \"state\"\n    }\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "815edd40-c105-4d31-a67a-c5f6e1a3b3ae",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "a8ccff54-39eb-44a7-8355-bc487eda1031",
+      "name": "Restore snapshot - default",
+      "request": {
+        "urlPathTemplate": "/v1/admin/restore",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"restored\": true,\n  \"source\": \"source\",\n  \"target\": \"target\",\n  \"verification\": {\n    \"record\": {\n      \"fields\": {\n        \"key\": \"value\"\n      },\n      \"id\": \"id\",\n      \"table\": \"table\",\n      \"tenant_id\": \"tenant_id\",\n      \"version_id\": 1\n    },\n    \"record_visible\": true,\n    \"request\": {\n      \"id\": \"id\",\n      \"table\": \"table\",\n      \"tenant_id\": \"tenant_id\"\n    },\n    \"status\": \"passed\"\n  }\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "a8ccff54-39eb-44a7-8355-bc487eda1031",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "3d4100ec-b9ae-4e67-bfd2-195423a2a74b",
+      "name": "Create snapshot - default",
+      "request": {
+        "urlPathTemplate": "/v1/admin/snapshot",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"snapshot\": true,\n  \"target\": \"target\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "3d4100ec-b9ae-4e67-bfd2-195423a2a74b",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "c3711342-6c46-46fe-b496-6dada72186f1",
+      "name": "List branches - default",
+      "request": {
+        "urlPathTemplate": "/v1/branches",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"branches\": [\n    {\n      \"branch_id\": \"branch_id\",\n      \"database_id\": \"database_id\",\n      \"endpoint\": \"endpoint\",\n      \"latest_epoch\": 1,\n      \"parent_branch_id\": \"parent_branch_id\",\n      \"state\": \"state\"\n    }\n  ],\n  \"gateway\": true\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "c3711342-6c46-46fe-b496-6dada72186f1",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "471ff683-c217-4fd6-b708-87475c3e69a4",
+      "name": "List databases - default",
+      "request": {
+        "urlPathTemplate": "/v1/databases",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"databases\": [\n    {\n      \"database_id\": \"database_id\",\n      \"endpoint\": \"endpoint\",\n      \"name\": \"name\",\n      \"org_id\": \"org_id\",\n      \"project_id\": \"project_id\",\n      \"region\": \"region\"\n    }\n  ],\n  \"gateway\": true,\n  \"mode\": \"mode\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "471ff683-c217-4fd6-b708-87475c3e69a4",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "93f6f54f-fdbb-4dc4-8210-710df537e2cf",
+      "name": "Explain hybrid query - default",
+      "request": {
+        "urlPathTemplate": "/v1/explain",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"access_path_timings\": [\n    {\n      \"access_path_id\": \"access_path_id\",\n      \"build_ms\": 1.1,\n      \"open_ms\": 1.1\n    }\n  ],\n  \"access_paths\": [\n    {\n      \"access_path_id\": \"access_path_id\",\n      \"candidates\": 1,\n      \"opened\": true,\n      \"visibility_checked_before_open\": true\n    }\n  ],\n  \"candidate_budget\": 1,\n  \"deduped_candidate_count\": 1,\n  \"dirty_feature_count\": 1,\n  \"early_stop_reason\": \"early_stop_reason\",\n  \"exact_fallback_triggered\": true,\n  \"failed_feature_count\": 1,\n  \"final_visibility_guard_count\": 1,\n  \"final_visibility_guard_removed\": 1,\n  \"freshness_mode\": \"freshness_mode\",\n  \"fusion_method\": \"fusion_method\",\n  \"hot_overlay_searched\": true,\n  \"lexical_cache_hits\": 1,\n  \"lexical_cache_misses\": 1,\n  \"lexical_indexed_documents\": 1,\n  \"lexical_scored_documents\": 1,\n  \"materialized_count\": 1,\n  \"missing_feature_count\": 1,\n  \"module_versions\": [\n    \"module_versions\"\n  ],\n  \"opened_candidate_streams\": [\n    \"opened_candidate_streams\"\n  ],\n  \"pending_feature_count\": 1,\n  \"phase_timings\": [\n    {\n      \"elapsed_ms\": 1.1,\n      \"phase\": \"phase\"\n    }\n  ],\n  \"planner_candidates\": [\n    {\n      \"freshness\": \"freshness\",\n      \"record_id\": \"record_id\",\n      \"score_upper_bound\": 1.1,\n      \"source\": \"source\",\n      \"version_id\": 1,\n      \"visibility_checked\": true\n    }\n  ],\n  \"policy_epoch\": 1,\n  \"read_epoch\": 1,\n  \"returned_count\": 1,\n  \"scalar_filter_applied\": true,\n  \"scalar_filter_predicates\": [\n    \"scalar_filter_predicates\"\n  ],\n  \"scalar_filter_removed_records\": 1,\n  \"scalar_filter_visible_records\": 1,\n  \"schema_epoch\": 1,\n  \"segments_scanned\": 1,\n  \"selected_strategy\": \"selected_strategy\",\n  \"skipped_access_paths\": [\n    \"skipped_access_paths\"\n  ],\n  \"tenant_mask_visible_records\": 1,\n  \"text_candidates\": 1,\n  \"vector_candidates\": 1\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "93f6f54f-fdbb-4dc4-8210-710df537e2cf",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "5a9d8948-8cf5-4167-b11e-3456b723c001",
+      "name": "Run native GraphQL query, mutation, or admin operation - default",
+      "request": {
+        "urlPathTemplate": "/v1/graphql",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"data\": {\n    \"key\": \"value\"\n  },\n  \"errors\": [\n    {\n      \"message\": \"message\",\n      \"path\": [\n        \"path\"\n      ]\n    }\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "5a9d8948-8cf5-4167-b11e-3456b723c001",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "cab39369-7735-4c48-9ac2-100f21ee792b",
+      "name": "Run bounded GraphQL compatibility query adapter - default",
+      "request": {
+        "urlPathTemplate": "/v1/graphql/bounded",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"explain\": {\n    \"access_path_timings\": [\n      {}\n    ],\n    \"access_paths\": [\n      {}\n    ],\n    \"candidate_budget\": 1,\n    \"deduped_candidate_count\": 1,\n    \"dirty_feature_count\": 1,\n    \"early_stop_reason\": \"early_stop_reason\",\n    \"exact_fallback_triggered\": true,\n    \"failed_feature_count\": 1,\n    \"final_visibility_guard_count\": 1,\n    \"final_visibility_guard_removed\": 1,\n    \"freshness_mode\": \"freshness_mode\",\n    \"fusion_method\": \"fusion_method\",\n    \"hot_overlay_searched\": true,\n    \"lexical_cache_hits\": 1,\n    \"lexical_cache_misses\": 1,\n    \"lexical_indexed_documents\": 1,\n    \"lexical_scored_documents\": 1,\n    \"materialized_count\": 1,\n    \"missing_feature_count\": 1,\n    \"module_versions\": [\n      \"module_versions\"\n    ],\n    \"opened_candidate_streams\": [\n      \"opened_candidate_streams\"\n    ],\n    \"pending_feature_count\": 1,\n    \"phase_timings\": [\n      {}\n    ],\n    \"planner_candidates\": [\n      {}\n    ],\n    \"policy_epoch\": 1,\n    \"read_epoch\": 1,\n    \"returned_count\": 1,\n    \"scalar_filter_applied\": true,\n    \"scalar_filter_predicates\": [\n      \"scalar_filter_predicates\"\n    ],\n    \"scalar_filter_removed_records\": 1,\n    \"scalar_filter_visible_records\": 1,\n    \"schema_epoch\": 1,\n    \"segments_scanned\": 1,\n    \"selected_strategy\": \"selected_strategy\",\n    \"skipped_access_paths\": [\n      \"skipped_access_paths\"\n    ],\n    \"tenant_mask_visible_records\": 1,\n    \"text_candidates\": 1,\n    \"vector_candidates\": 1\n  },\n  \"next_cursor\": \"next_cursor\",\n  \"results\": [\n    {\n      \"fields\": {\n        \"key\": \"value\"\n      },\n      \"record_id\": \"record_id\",\n      \"tenant_id\": \"tenant_id\",\n      \"version_id\": 1\n    }\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "cab39369-7735-4c48-9ac2-100f21ee792b",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "028a5006-7125-4efc-9473-ec12a00c5d7d",
+      "name": "Export bounded GraphQL schema - default",
+      "request": {
+        "urlPathTemplate": "/v1/graphql/schema",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"adapter\": \"adapter\",\n  \"execution\": \"execution\",\n  \"schema\": \"schema\",\n  \"tables\": [\n    \"tables\"\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "028a5006-7125-4efc-9473-ec12a00c5d7d",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "843f8ae3-24ac-45e6-a4f2-6334d34fdd49",
+      "name": "Run hybrid query - default",
+      "request": {
+        "urlPathTemplate": "/v1/query",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"explain\": {\n    \"access_path_timings\": [\n      {}\n    ],\n    \"access_paths\": [\n      {}\n    ],\n    \"candidate_budget\": 1,\n    \"deduped_candidate_count\": 1,\n    \"dirty_feature_count\": 1,\n    \"early_stop_reason\": \"early_stop_reason\",\n    \"exact_fallback_triggered\": true,\n    \"failed_feature_count\": 1,\n    \"final_visibility_guard_count\": 1,\n    \"final_visibility_guard_removed\": 1,\n    \"freshness_mode\": \"freshness_mode\",\n    \"fusion_method\": \"fusion_method\",\n    \"hot_overlay_searched\": true,\n    \"lexical_cache_hits\": 1,\n    \"lexical_cache_misses\": 1,\n    \"lexical_indexed_documents\": 1,\n    \"lexical_scored_documents\": 1,\n    \"materialized_count\": 1,\n    \"missing_feature_count\": 1,\n    \"module_versions\": [\n      \"module_versions\"\n    ],\n    \"opened_candidate_streams\": [\n      \"opened_candidate_streams\"\n    ],\n    \"pending_feature_count\": 1,\n    \"phase_timings\": [\n      {}\n    ],\n    \"planner_candidates\": [\n      {}\n    ],\n    \"policy_epoch\": 1,\n    \"read_epoch\": 1,\n    \"returned_count\": 1,\n    \"scalar_filter_applied\": true,\n    \"scalar_filter_predicates\": [\n      \"scalar_filter_predicates\"\n    ],\n    \"scalar_filter_removed_records\": 1,\n    \"scalar_filter_visible_records\": 1,\n    \"schema_epoch\": 1,\n    \"segments_scanned\": 1,\n    \"selected_strategy\": \"selected_strategy\",\n    \"skipped_access_paths\": [\n      \"skipped_access_paths\"\n    ],\n    \"tenant_mask_visible_records\": 1,\n    \"text_candidates\": 1,\n    \"vector_candidates\": 1\n  },\n  \"next_cursor\": \"next_cursor\",\n  \"results\": [\n    {\n      \"fields\": {\n        \"key\": \"value\"\n      },\n      \"record_id\": \"record_id\",\n      \"tenant_id\": \"tenant_id\",\n      \"version_id\": 1\n    }\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "843f8ae3-24ac-45e6-a4f2-6334d34fdd49",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "40b07ef3-4b4b-481b-896c-5c595886bc6a",
+      "name": "Run native TraceQL query or command - default",
+      "request": {
+        "urlPathTemplate": "/v1/traceql",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"explain\": {\n    \"access_path_timings\": [\n      {}\n    ],\n    \"access_paths\": [\n      {}\n    ],\n    \"candidate_budget\": 1,\n    \"deduped_candidate_count\": 1,\n    \"dirty_feature_count\": 1,\n    \"early_stop_reason\": \"early_stop_reason\",\n    \"exact_fallback_triggered\": true,\n    \"failed_feature_count\": 1,\n    \"final_visibility_guard_count\": 1,\n    \"final_visibility_guard_removed\": 1,\n    \"freshness_mode\": \"freshness_mode\",\n    \"fusion_method\": \"fusion_method\",\n    \"hot_overlay_searched\": true,\n    \"lexical_cache_hits\": 1,\n    \"lexical_cache_misses\": 1,\n    \"lexical_indexed_documents\": 1,\n    \"lexical_scored_documents\": 1,\n    \"materialized_count\": 1,\n    \"missing_feature_count\": 1,\n    \"module_versions\": [\n      \"module_versions\"\n    ],\n    \"opened_candidate_streams\": [\n      \"opened_candidate_streams\"\n    ],\n    \"pending_feature_count\": 1,\n    \"phase_timings\": [\n      {}\n    ],\n    \"planner_candidates\": [\n      {}\n    ],\n    \"policy_epoch\": 1,\n    \"read_epoch\": 1,\n    \"returned_count\": 1,\n    \"scalar_filter_applied\": true,\n    \"scalar_filter_predicates\": [\n      \"scalar_filter_predicates\"\n    ],\n    \"scalar_filter_removed_records\": 1,\n    \"scalar_filter_visible_records\": 1,\n    \"schema_epoch\": 1,\n    \"segments_scanned\": 1,\n    \"selected_strategy\": \"selected_strategy\",\n    \"skipped_access_paths\": [\n      \"skipped_access_paths\"\n    ],\n    \"tenant_mask_visible_records\": 1,\n    \"text_candidates\": 1,\n    \"vector_candidates\": 1\n  },\n  \"next_cursor\": \"next_cursor\",\n  \"results\": [\n    {\n      \"fields\": {\n        \"key\": \"value\"\n      },\n      \"record_id\": \"record_id\",\n      \"tenant_id\": \"tenant_id\",\n      \"version_id\": 1\n    }\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "40b07ef3-4b4b-481b-896c-5c595886bc6a",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "4712aa74-21f8-4c4e-bcc2-999d6608052f",
+      "name": "Health check - default",
+      "request": {
+        "urlPathTemplate": "/v1/health",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"catalog_databases\": 1,\n  \"engine_url\": \"engine_url\",\n  \"metered_requests\": 1,\n  \"ok\": true,\n  \"service\": \"service\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "4712aa74-21f8-4c4e-bcc2-999d6608052f",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "45f6be31-c42a-4d5a-8edb-2aef2c25b7c1",
+      "name": "Insert record compatibility route - default",
+      "request": {
+        "urlPathTemplate": "/v1/insert",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"epoch\": 1\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "45f6be31-c42a-4d5a-8edb-2aef2c25b7c1",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "a0097c06-dcd8-4c67-9975-c357349ebb02",
+      "name": "Delete record - default",
+      "request": {
+        "urlPathTemplate": "/v1/records/delete",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"deleted\": true,\n  \"epoch\": 1\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "a0097c06-dcd8-4c67-9975-c357349ebb02",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "33f4a137-ecfc-4141-a7ac-3261dbfcb0bb",
+      "name": "Get record - default",
+      "request": {
+        "urlPathTemplate": "/v1/records/get",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"record\": {\n    \"fields\": {\n      \"key\": \"value\"\n    },\n    \"id\": \"id\",\n    \"table\": \"table\",\n    \"tenant_id\": \"tenant_id\",\n    \"version_id\": 1\n  }\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "33f4a137-ecfc-4141-a7ac-3261dbfcb0bb",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "10b03233-3aa6-4b01-abbe-b35ff8d54a23",
+      "name": "Patch record - default",
+      "request": {
+        "urlPathTemplate": "/v1/records/patch",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"epoch\": 1\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "10b03233-3aa6-4b01-abbe-b35ff8d54a23",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "36c3ab5c-793d-42f5-9615-87afa14432c1",
+      "name": "Put record - default",
+      "request": {
+        "urlPathTemplate": "/v1/records/put",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"epoch\": 1\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "36c3ab5c-793d-42f5-9615-87afa14432c1",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "93d03798-5bab-475e-b957-f74028e1385f",
+      "name": "Put record batch - default",
+      "request": {
+        "urlPathTemplate": "/v1/records/put-batch",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"epoch\": 1,\n  \"record_count\": 1,\n  \"write_timing\": {\n    \"key\": 1.1\n  }\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "93d03798-5bab-475e-b957-f74028e1385f",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "9b4b127a-25d7-45fd-8726-850d39266190",
+      "name": "Scan records - default",
+      "request": {
+        "urlPathTemplate": "/v1/records/scan",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"next_cursor\": \"next_cursor\",\n  \"records\": [\n    {\n      \"fields\": {\n        \"key\": \"value\"\n      },\n      \"id\": \"id\",\n      \"table\": \"table\",\n      \"tenant_id\": \"tenant_id\",\n      \"version_id\": 1\n    }\n  ],\n  \"returned_count\": 1\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "9b4b127a-25d7-45fd-8726-850d39266190",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "36577380-f75f-4335-bf68-a8c653e7294a",
+      "name": "Read public-safe metrics - default",
+      "request": {
+        "urlPathTemplate": "/v1/metrics/public-safe",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"durable_epoch\": 1,\n  \"gateway\": true,\n  \"index_count\": 1,\n  \"latest_epoch\": 1,\n  \"module_count\": 1,\n  \"rate_limit_enabled\": true,\n  \"rate_limit_requests\": 1,\n  \"recovery_state\": \"recovery_state\",\n  \"requests\": 1,\n  \"schema_count\": 1,\n  \"segment_count\": 1,\n  \"service\": \"service\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "36577380-f75f-4335-bf68-a8c653e7294a",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "585dd062-70c1-429a-8293-c8ea1fda23ab",
+      "name": "Readiness check - default",
+      "request": {
+        "urlPathTemplate": "/v1/ready",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"catalog_databases\": 1,\n  \"durable_epoch\": 1,\n  \"engine_health_checked\": true,\n  \"engine_status_code\": 1,\n  \"engine_url\": \"engine_url\",\n  \"error\": \"error\",\n  \"latest_epoch\": 1,\n  \"metered_requests\": 1,\n  \"ok\": true,\n  \"ready\": true,\n  \"recovery_state\": \"recovery_state\",\n  \"service\": \"service\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "585dd062-70c1-429a-8293-c8ea1fda23ab",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "c193b724-d9d5-481e-a837-654e2d094eeb",
+      "name": "Apply table schema - default",
+      "request": {
+        "urlPathTemplate": "/v1/schema/apply",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"epoch\": 1\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "c193b724-d9d5-481e-a837-654e2d094eeb",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "total": 23
+  }
+}
