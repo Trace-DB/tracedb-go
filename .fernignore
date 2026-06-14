@@ -1,12 +1,18 @@
 # TraceDB-owned repository management and release files.
 # Keep Fern generation scoped to SDK source artifacts.
-.circleci/config.yml
+.circleci/**
 .coderabbit.yaml
 .github/dependabot.yml
+.github/scripts/**
+.github/workflows/ci.yml
 .github/workflows/release.yml
 .github/workflows/publish.yml
 .github/workflows/sign.yml
 .gitignore
+CHANGELOG.md
 LICENSE
+MIGRATION.md
+README.md
 SECURITY.md
+go.sum
 tracedb-protocol.lock

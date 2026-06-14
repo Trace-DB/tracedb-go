@@ -1,16 +1,16 @@
 # TraceDb Go Library
 
 [![fern shield](https://img.shields.io/badge/%F0%9F%8C%BF-Built%20with%20Fern-brightgreen)](https://buildwithfern.com?utm_source=github&utm_medium=github&utm_campaign=readme&utm_source=https%3A%2F%2Fgithub.com%2FTrace-DB%2Ftracedb-go)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+[![Docs](https://img.shields.io/badge/docs-TraceDB-informational)](https://docs.trace-db.com)
 
 The TraceDb Go library provides convenient access to the TraceDb APIs from Go.
 
 ## Table of Contents
 
-- [Split Checkpoint](#split-checkpoint)
-- [Registry Status](#registry-status)
-- [Planned Scope](#planned-scope)
-- [Initial Package Shape](#initial-package-shape)
-- [First Pr Checklist](#first-pr-checklist)
+- [v0.1.1 Checkpoint](#v011-checkpoint)
+- [Fern Preservation](#fern-preservation)
+- [Claim Boundary](#claim-boundary)
 - [Reference](#reference)
 - [Usage](#usage)
 - [Environments](#environments)
@@ -23,77 +23,27 @@ The TraceDb Go library provides convenient access to the TraceDb APIs from Go.
   - [Explicit Null](#explicit-null)
 - [Contributing](#contributing)
 
-## Split Checkpoint
+## v0.1.1 Checkpoint
 
-Status: **future-only** after the Trace-DB organization split.
+The TraceDB v0.1.1 Go SDK is Fern-generated in pull-request mode. The module
+path is `github.com/Trace-DB/tracedb-go`; the `v0.1.1` semver tag is the public
+module release path.
 
-Checkpoint plan:
+This repository now contains generated Go source, `go.mod`, `go.sum`, and
+generated usage examples. Keep README claims tied to the generated client shape
+and registry/module receipts, not to pre-generation placeholder docs.
 
-1. Keep this repository as a documented placeholder until Go SDK work is
-   explicitly prioritized.
-2. Do not add package metadata, release automation, or SDK claims before the
-   first implementation PR.
-3. Start implementation only after pinning a `tracedb-protocol.lock` and
-   defining the initial smoke path.
+## Fern Preservation
 
-This repository is reserved for the future official Go SDK.
+This repository includes `.fernignore` so Fern Replay and future generated PRs
+preserve repo-owned files such as this README, release workflows, legal/security
+files, repo config, lockfiles, and `tracedb-protocol.lock` when present.
 
-No Go SDK implementation, module path, package artifact, or verification smoke is
-present yet. When implementation starts, it should follow the same contract
-boundaries as the Rust, TypeScript, and Python SDKs and should not claim release
-readiness until the smoke path below exists.
+## Claim Boundary
 
-This repository is public as a language-SDK placeholder only. It does not
-contain hosted TraceDB SaaS internals, operator tooling, or deployment
-automation.
-
-## Registry Status
-
-No Go SDK implementation, Go module path, or package artifact is published for
-TraceDB yet. The public Go module proxy has no versioned `tracedb-go` releases
-for this organization lane. Any Go package or module claim should remain
-planned-only until the first implementation PR defines the module path,
-protocol lock, and smoke path.
-
-## Planned Scope
-
-- `Client` constructed from explicit config or `FromEnv()`.
-- `Table` handle for tenant-scoped record operations.
-- Safe retries for read-only routes only.
-- Idempotency retries for keyed mutation/admin routes only.
-- Typed error surface with method, path, status, raw body, parsed error, and
-  optional code.
-- `User-Agent: tracedb-go/<version>` on requests.
-- Protocol lock pinned to `tracedb-protocol` once code exists.
-
-## Initial Package Shape
-
-```text
-tracedb-go/
-  go.mod
-  client.go
-  errors.go
-  models.go
-  retry.go
-  client_test.go
-```
-
-## First PR Checklist
-
-Before this repository claims an implemented SDK, add:
-
-- A `tracedb-protocol.lock` pinned to the current protocol revision.
-- Minimal typed request/response models for the v0 HTTP routes used by the
-  smoke test.
-- A sync `Client` with explicit config and `FromEnv()` construction.
-- Table handles for schema apply, insert, scan/get/delete, and hybrid query.
-- Tests for request shape, auth headers, retry boundaries, and error parsing.
-- A local HTTP smoke that starts or targets a TraceDB server and exits non-zero
-  on failure.
-- README commands that a new contributor can run from a fresh checkout.
-
-The first implementation should target `platform-contract-v0` and include a
-local HTTP smoke comparable to the existing Python and TypeScript SDK smokes.
+This repository is public SDK packaging infrastructure. It does not contain
+hosted TraceDB SaaS internals, operator tooling, deployment automation,
+production credentials, or private control-plane code.
 
 ## Reference
 
